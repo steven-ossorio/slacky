@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
 =======
   validates :username, length: { minimum: 5 }
-  validates :email_address, unique: true
+  validates :email_address, uniqueness: true
   
 >>>>>>> basic user model with some model validations
 end
