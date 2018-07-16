@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :membership,
   foreign_key: :user_id,
-  class_name: :membership,
+  class_name: :Member,
   primary_key: :id
 
   def self.find_by_credentials(email, password)
