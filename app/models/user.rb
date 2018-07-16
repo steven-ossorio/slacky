@@ -6,8 +6,13 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :membership,
-  foreign_key: :user_id,
   class_name: :Member,
+  foreign_key: :user_id,
+  primary_key: :id
+
+  has_many :messages,
+  class_name: :Message,
+  foreign_key: :user_id,
   primary_key: :id
 
   def self.find_by_credentials(email, password)
