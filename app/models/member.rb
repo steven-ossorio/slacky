@@ -1,11 +1,11 @@
 class Member < ApplicationRecord
   has_many :users,
-  foreign_key: :user_id,
   class_name: :User,
+  foreign_key: :user_id,
   primary_key: :id
 
   has_many :workspaces,
-  foreign_key: :workspace_id,
   class_name: :Workspace,
+  foreign_key: :workspace_id,
   primary_key: :id
 end
