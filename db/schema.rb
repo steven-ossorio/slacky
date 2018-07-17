@@ -11,15 +11,22 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_16_010908) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_13_004146) do
 >>>>>>> basic user model with some model validations
+=======
+ActiveRecord::Schema.define(version: 2018_07_17_011346) do
+>>>>>>> Added attribute to save session token
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Added attribute to save session token
   create_table "channels", force: :cascade do |t|
     t.integer "workspace_id"
     t.string "name"
@@ -42,14 +49,25 @@ ActiveRecord::Schema.define(version: 2018_07_13_004146) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
 =======
 >>>>>>> basic user model with some model validations
+=======
+>>>>>>> Added attribute to save session token
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email_address"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "session_token"
+  end
+
+  create_table "workspaces", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
 <<<<<<< HEAD
