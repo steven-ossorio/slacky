@@ -11,10 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_16_010908) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_14_215657) do
 >>>>>>> Create Workspace table.
+=======
+ActiveRecord::Schema.define(version: 2018_07_14_220122) do
+>>>>>>> Added user_id column to workspaces
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,9 +61,13 @@ ActiveRecord::Schema.define(version: 2018_07_14_215657) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.integer "user_id"
 =======
 >>>>>>> Create Workspace table.
+=======
+    t.integer "user_id"
+>>>>>>> Added user_id column to workspaces
   end
 
 end
