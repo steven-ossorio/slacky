@@ -6,11 +6,17 @@ class Channel < ApplicationRecord
   class_name: :Workspace,
   primary_key: :id
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Added message association in Channel model
 
   has_many :messages,
   class_name: :Message,
   foreign_key: :channel_id,
   primary_key: :id
+<<<<<<< HEAD
 =======
 >>>>>>> Added Channel table and association to workspace
+=======
+>>>>>>> Added message association in Channel model
 end
