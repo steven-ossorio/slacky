@@ -11,10 +11,20 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1eabf52e04a0d0bca6a45128fac1f4a334962503
 ActiveRecord::Schema.define(version: 2018_07_17_011346) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_16_010534) do
 >>>>>>> Added Channel table and association to workspace
+<<<<<<< HEAD
+=======
+=======
+ActiveRecord::Schema.define(version: 2018_07_17_011346) do
+>>>>>>> c111c605b55e66afa1c17d4e804bce3c0e90e497
+>>>>>>> 1eabf52e04a0d0bca6a45128fac1f4a334962503
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +61,19 @@ ActiveRecord::Schema.define(version: 2018_07_16_010534) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.string "session_token"
 =======
 >>>>>>> Added Channel table and association to workspace
+=======
+<<<<<<< HEAD
+    t.string "session_token"
+=======
+>>>>>>> Added Channel table and association to workspace
+=======
+    t.string "session_token"
+>>>>>>> c111c605b55e66afa1c17d4e804bce3c0e90e497
+>>>>>>> 1eabf52e04a0d0bca6a45128fac1f4a334962503
   end
 
   create_table "workspaces", force: :cascade do |t|
