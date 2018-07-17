@@ -11,10 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_17_011346) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_13_004146) do
 >>>>>>> basic user model with some model validations
+=======
+ActiveRecord::Schema.define(version: 2018_07_17_011346) do
+>>>>>>> d7739e3538280e6ab76e7fea71b5ba8c03140270
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +55,9 @@ ActiveRecord::Schema.define(version: 2018_07_13_004146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d7739e3538280e6ab76e7fea71b5ba8c03140270
     t.string "session_token"
   end
 

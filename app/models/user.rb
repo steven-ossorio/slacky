@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d7739e3538280e6ab76e7fea71b5ba8c03140270
   validates :username, :email_address, uniqueness: true
   validates :username, :email_address, :password_digest, presence: true
   validates :password, length: { minimum: 6 }
@@ -43,9 +46,12 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= User.generate_session_token
   end
+<<<<<<< HEAD
 =======
   validates :username, length: { minimum: 5 }
   validates :email_address, uniqueness: true
   
 >>>>>>> basic user model with some model validations
+=======
+>>>>>>> d7739e3538280e6ab76e7fea71b5ba8c03140270
 end
