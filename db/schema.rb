@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_16_010908) do
+=======
+ActiveRecord::Schema.define(version: 2018_07_16_010534) do
+>>>>>>> Added Channel table and association to workspace
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_010908) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "messages", force: :cascade do |t|
     t.string "text"
     t.integer "channel_id"
@@ -37,6 +42,8 @@ ActiveRecord::Schema.define(version: 2018_07_16_010908) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> Added Channel table and association to workspace
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email_address"
