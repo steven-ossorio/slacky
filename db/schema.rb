@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_07_16_010908) do
-=======
-ActiveRecord::Schema.define(version: 2018_07_16_010534) do
->>>>>>> Added Channel table and association to workspace
-=======
-ActiveRecord::Schema.define(version: 2018_07_16_010908) do
->>>>>>> Created Message model and associations
-=======
-ActiveRecord::Schema.define(version: 2018_07_16_010908) do
->>>>>>> f7b93e1ee4ba176a357988e6b49d4bc5e9c08e54
+ActiveRecord::Schema.define(version: 2018_07_17_011346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,13 +29,6 @@ ActiveRecord::Schema.define(version: 2018_07_16_010908) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Created Message model and associations
-=======
->>>>>>> f7b93e1ee4ba176a357988e6b49d4bc5e9c08e54
   create_table "messages", force: :cascade do |t|
     t.string "text"
     t.integer "channel_id"
@@ -56,20 +37,13 @@ ActiveRecord::Schema.define(version: 2018_07_16_010908) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Added Channel table and association to workspace
-=======
->>>>>>> Created Message model and associations
-=======
->>>>>>> f7b93e1ee4ba176a357988e6b49d4bc5e9c08e54
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email_address"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "session_token"
   end
 
   create_table "workspaces", force: :cascade do |t|
