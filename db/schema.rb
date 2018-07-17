@@ -12,6 +12,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_16_010908) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_14_215657) do
@@ -19,6 +20,9 @@ ActiveRecord::Schema.define(version: 2018_07_14_215657) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_14_220122) do
 >>>>>>> Added user_id column to workspaces
+=======
+ActiveRecord::Schema.define(version: 2018_07_14_221845) do
+>>>>>>> removed user_id from workspaces table
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,12 +66,15 @@ ActiveRecord::Schema.define(version: 2018_07_14_220122) do
     t.datetime "updated_at", null: false
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.integer "user_id"
 =======
 >>>>>>> Create Workspace table.
 =======
     t.integer "user_id"
 >>>>>>> Added user_id column to workspaces
+=======
+>>>>>>> removed user_id from workspaces table
   end
 
 end
