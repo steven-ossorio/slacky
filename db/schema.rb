@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_17_011346) do
+=======
+ActiveRecord::Schema.define(version: 2018_07_14_222057) do
+>>>>>>> 83aec90bf529b7ec788def2a9522c50f88cd3b66
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "channels", force: :cascade do |t|
     t.integer "workspace_id"
     t.string "name"
@@ -22,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_07_17_011346) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 83aec90bf529b7ec788def2a9522c50f88cd3b66
   create_table "members", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workspace_id"
@@ -29,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_07_17_011346) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "messages", force: :cascade do |t|
     t.string "text"
     t.integer "channel_id"
@@ -37,20 +45,28 @@ ActiveRecord::Schema.define(version: 2018_07_17_011346) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 83aec90bf529b7ec788def2a9522c50f88cd3b66
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email_address"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "session_token"
+=======
+>>>>>>> 83aec90bf529b7ec788def2a9522c50f88cd3b66
   end
 
   create_table "workspaces", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer "user_id"
+=======
+>>>>>>> 83aec90bf529b7ec788def2a9522c50f88cd3b66
   end
 
 end
