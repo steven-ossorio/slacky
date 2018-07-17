@@ -14,6 +14,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_16_010908) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_14_215657) do
@@ -27,10 +28,14 @@ ActiveRecord::Schema.define(version: 2018_07_14_221845) do
 =======
 ActiveRecord::Schema.define(version: 2018_07_16_004700) do
 >>>>>>> Added user_id column to workspace table
+=======
+ActiveRecord::Schema.define(version: 2018_07_16_004700) do
+>>>>>>> 4efa0623074a9aeb7f29f1c6f4d12f404b6b4d28
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   create_table "channels", force: :cascade do |t|
@@ -42,6 +47,8 @@ ActiveRecord::Schema.define(version: 2018_07_16_004700) do
 
 =======
 >>>>>>> Added user_id column to workspace table
+=======
+>>>>>>> 4efa0623074a9aeb7f29f1c6f4d12f404b6b4d28
   create_table "members", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workspace_id"
@@ -49,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_004700) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   create_table "messages", force: :cascade do |t|
     t.string "text"
@@ -62,6 +70,8 @@ ActiveRecord::Schema.define(version: 2018_07_16_004700) do
 >>>>>>> Create Workspace table.
 =======
 >>>>>>> Added user_id column to workspace table
+=======
+>>>>>>> 4efa0623074a9aeb7f29f1c6f4d12f404b6b4d28
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email_address"
@@ -78,6 +88,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_004700) do
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.integer "user_id"
 =======
 >>>>>>> Create Workspace table.
@@ -89,6 +100,9 @@ ActiveRecord::Schema.define(version: 2018_07_16_004700) do
 =======
     t.integer "user_id"
 >>>>>>> Added user_id column to workspace table
+=======
+    t.integer "user_id"
+>>>>>>> 4efa0623074a9aeb7f29f1c6f4d12f404b6b4d28
   end
 
 end
