@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_17_011346) do
+=======
+ActiveRecord::Schema.define(version: 2018_07_13_004146) do
+>>>>>>> basic user model with some model validations
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "channels", force: :cascade do |t|
     t.integer "workspace_id"
     t.string "name"
@@ -37,12 +42,15 @@ ActiveRecord::Schema.define(version: 2018_07_17_011346) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> basic user model with some model validations
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email_address"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "session_token"
   end
 
@@ -51,6 +59,8 @@ ActiveRecord::Schema.define(version: 2018_07_17_011346) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+=======
+>>>>>>> basic user model with some model validations
   end
 
 end
