@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post 'workspaces', to: 'workspaces#create'
 
     get 'user/:id', to: 'users#show'
+    get 'user/:id/workspaces', to: 'users#workspaces'
 
     delete 'logout', to: 'session#destroy'
   end
