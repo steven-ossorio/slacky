@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     get 'user/:id', to: 'users#show'
     get 'user/:id/workspaces', to: 'users#workspaces'
+    get 'workspace/:id/members', to: 'workspaces#members'
 
     delete 'logout', to: 'session#destroy'
   end

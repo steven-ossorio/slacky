@@ -1,1 +1,1 @@
-json.members @workspace.members
+json.members @members

@@ -14,6 +14,7 @@ class Api::WorkspacesController < ApplicationController
 
   def members
     @workspace = Workspace.find(params[:id])
+    @members = @workspace.members
     render :members
   end
 
