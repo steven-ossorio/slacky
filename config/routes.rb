@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     post 'register', to: 'users#create'
     post 'login', to: 'session#create'
     post 'workspaces', to: 'workspaces#create'
+    post 'channels', to: 'channels#create'
+    post 'messages', to: 'messages#create'
 
     get 'user/:id', to: 'users#show'
     get 'user/:id/workspaces', to: 'users#workspaces'
