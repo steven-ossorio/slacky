@@ -1,9 +1,11 @@
 class User < ApplicationRecord
   validates :username, :email_address, uniqueness: true
   validates :username, :email_address, :password_digest, presence: true
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
+
+  after_initialize :ensure_session_token
 
   has_many :membership,
   class_name: :Member,
@@ -15,8 +17,8 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   primary_key: :id
 
-  def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
+  def self.find_by_credentials(email_address, password)
+    user = User.find_by(email_address: email_address)
     user && user.is_password?(password) ? user : nil
   end
 
