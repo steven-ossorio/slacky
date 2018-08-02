@@ -12,6 +12,11 @@ class Api::WorkspacesController < ApplicationController
     end
   end
 
+  def members
+    @workspace = Workspace.find(params[:id])
+    render :members
+  end
+
   private
   def workspace_params
     params.require(:workspace).permit(:name)

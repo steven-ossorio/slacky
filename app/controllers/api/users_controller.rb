@@ -15,6 +15,11 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def workspaces
+    @workspaces = Workspace.where(user_id: current_user.id)
+    render :workspaces
+  end
+
   private
 
   def user_params
