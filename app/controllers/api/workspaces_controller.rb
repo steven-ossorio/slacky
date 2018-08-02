@@ -5,6 +5,7 @@ class Api::WorkspacesController < ApplicationController
     @workspace = Workspace.new(workspace_params)
     @workspace.user_id = current_user.id
     if @workspace.save
+      Member.create(user_id: current_user.id, workspace_id: @workspace.id)
       render :show
     else
       render json: @workspace.errors.messages, status: 422
