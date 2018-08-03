@@ -3,8 +3,8 @@ class Api::SessionController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
-      params[:user][:email_address],
-      params[:user][:password]
+      user_params[:email_address],
+      user_params[:password]
     )
 
     if @user
@@ -23,5 +23,9 @@ class Api::SessionController < ApplicationController
     else
       render json: ['No user is logged in']
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:email_address, :password)
   end
 end
