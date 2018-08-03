@@ -3,8 +3,11 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-    @channel.save
-    render :show
+    if @channel.save
+      render :show
+    else
+      render json: @channel.errors.messages, status: 422
+    end
   end
 
   private
