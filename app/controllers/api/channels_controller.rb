@@ -10,6 +10,11 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def messages
+    @channel = Channel.find(params[:id])
+    render :messages
+  end
+
   private
 
   def channel_params
