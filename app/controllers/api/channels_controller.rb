@@ -1,5 +1,4 @@
 class Api::ChannelsController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def create
     @channel = Channel.new(channel_params)
