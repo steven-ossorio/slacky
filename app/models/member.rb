@@ -1,10 +1,10 @@
 class Member < ApplicationRecord
-  has_many :users,
+  belongs_to :user,
   class_name: :User,
   foreign_key: :user_id,
   primary_key: :id
 
-  has_many :workspaces,
+  belongs_to :workspace,
   class_name: :Workspace,
   foreign_key: :workspace_id,
   primary_key: :id
