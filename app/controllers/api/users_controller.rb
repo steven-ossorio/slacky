@@ -1,4 +1,8 @@
 class Api::UsersController < ApplicationController
+<<<<<<< HEAD
+=======
+  skip_before_action :verify_authenticity_token
+>>>>>>> c2355ef2d1f19eae09c7a2263043c43bbe0024f0
 
   def create
     @user = User.new(user_params)
@@ -14,11 +18,14 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+<<<<<<< HEAD
   def workspaces
     @workspaces = Workspace.where(user_id: current_user.id)
     render :workspaces
   end
 
+=======
+>>>>>>> c2355ef2d1f19eae09c7a2263043c43bbe0024f0
   private
 
   def user_params
