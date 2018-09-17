@@ -1,4 +1,5 @@
 class Api::ChannelsController < ApplicationController
+<<<<<<< HEAD
 
   def create
     @channel = Channel.new(channel_params)
@@ -12,6 +13,14 @@ class Api::ChannelsController < ApplicationController
   def messages
     @channel = Channel.find(params[:id])
     render :messages
+=======
+  skip_before_action :verify_authenticity_token
+
+  def create
+    @channel = Channel.new(channel_params)
+    @channel.save
+    render :show
+>>>>>>> 7829a44ef8c65ea243e413ae6c4a53a729acac5c
   end
 
   private

@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+<<<<<<< HEAD
   helper_method :current_user, :logged_in
   skip_before_action :verify_authenticity_token
 
+=======
+
+  helper_method :current_user, :logged_in
+>>>>>>> 7829a44ef8c65ea243e413ae6c4a53a729acac5c
 
   def login(user)
     @current_user = user
