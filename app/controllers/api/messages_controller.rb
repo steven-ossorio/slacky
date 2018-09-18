@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Api::MessagesController < ApplicationController
 
   def create
@@ -15,4 +16,9 @@ class Api::MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:text, :channel_id)
   end
+=======
+class MessagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
+>>>>>>> 7829a44ef8c65ea243e413ae6c4a53a729acac5c
 end

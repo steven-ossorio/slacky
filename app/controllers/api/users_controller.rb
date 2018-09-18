@@ -1,4 +1,8 @@
 class Api::UsersController < ApplicationController
+<<<<<<< HEAD
+=======
+  skip_before_action :verify_authenticity_token
+>>>>>>> 7829a44ef8c65ea243e413ae6c4a53a729acac5c
 
   def create
     @user = User.new(user_params)
