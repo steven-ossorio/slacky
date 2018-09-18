@@ -13,6 +13,7 @@ class Api::SessionController < ApplicationController
       render json: ['Invalid Credentials'], status: 401
     end
   end
+  
 
   def destroy
     @user = current_user
