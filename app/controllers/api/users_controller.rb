@@ -1,8 +1,12 @@
 class Api::UsersController < ApplicationController
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   skip_before_action :verify_authenticity_token
 >>>>>>> Successfully add a user through postman
+=======
+  skip_before_action :verify_authenticity_token
+>>>>>>> 31bf41b831cafe2bd6d1b6f6fd8b793ea8baf6db
 
   def create
     @user = User.new(user_params)
