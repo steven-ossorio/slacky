@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 class Api::UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def create
     @user = User.new(user_params)
@@ -18,20 +18,11 @@ class Api::UsersController < ApplicationController
   def workspaces
     @workspaces = Workspace.where(user_id: current_user.id)
     render :workspaces
-=======
-class API::UsersController < ApplicationController
-  def create
-    
->>>>>>> add controllers and working on creating methods
   end
 
   private
 
   def user_params
-<<<<<<< HEAD
     params.require(:user).permit(:email_address, :password, :username)
-=======
-    params.require(:user).permit(:email, :password)
->>>>>>> add controllers and working on creating methods
   end
 end
