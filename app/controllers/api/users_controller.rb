@@ -1,4 +1,8 @@
 class Api::UsersController < ApplicationController
+<<<<<<< HEAD
+=======
+  skip_before_action :verify_authenticity_token
+>>>>>>> Successfully add a user through postman
 
   def create
     @user = User.new(user_params)
@@ -12,11 +16,14 @@ class Api::UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+<<<<<<< HEAD
   end
 
   def workspaces
     @workspaces = Workspace.where(user_id: current_user.id)
     render :workspaces
+=======
+>>>>>>> Successfully add a user through postman
   end
 
   private
