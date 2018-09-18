@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     post 'register', to: 'users#create'
-<<<<<<< HEAD
     post 'login', to: 'session#create'
     post 'workspaces', to: 'workspaces#create'
     post 'channels', to: 'channels#create'
@@ -17,8 +16,5 @@ Rails.application.routes.draw do
     get 'channel/:id/messages', to: 'channels#messages'
 
     delete 'logout', to: 'session#destroy'
-=======
-    get 'user/:id', to: 'users#show'
->>>>>>> Successfully add a user through postman
   end
 end
