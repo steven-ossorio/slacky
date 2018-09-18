@@ -1,8 +1,4 @@
 class Api::WorkspacesController < ApplicationController 
-<<<<<<< HEAD
-=======
-  skip_before_action :verify_authenticity_token
->>>>>>> c2355ef2d1f19eae09c7a2263043c43bbe0024f0
 
   def create
     @workspace = Workspace.new(workspace_params)
@@ -15,7 +11,6 @@ class Api::WorkspacesController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def members
     @workspace = Workspace.find(params[:id])
     @members = @workspace.members
@@ -28,8 +23,6 @@ class Api::WorkspacesController < ApplicationController
     render :channels
   end
 
-=======
->>>>>>> c2355ef2d1f19eae09c7a2263043c43bbe0024f0
   private
   def workspace_params
     params.require(:workspace).permit(:name)

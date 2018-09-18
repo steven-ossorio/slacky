@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     post 'register', to: 'users#create'
     post 'login', to: 'session#create'
     post 'workspaces', to: 'workspaces#create'
-<<<<<<< HEAD
     post 'channels', to: 'channels#create'
     post 'messages', to: 'messages#create'
 
@@ -15,11 +14,6 @@ Rails.application.routes.draw do
     get 'workspace/:id/channels', to: 'workspaces#channels'
     get 'workspace/:id/members', to: 'workspaces#members'
     get 'channel/:id/messages', to: 'channels#messages'
-=======
-
-    get 'user/:id', to: 'users#show'
-    get 'user/:id/workspaces', to: 'users#workspaces'
->>>>>>> c2355ef2d1f19eae09c7a2263043c43bbe0024f0
 
     delete 'logout', to: 'session#destroy'
   end
