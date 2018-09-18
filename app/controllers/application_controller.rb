@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+<<<<<<< HEAD
   helper_method :current_user, :logged_in
   skip_before_action :verify_authenticity_token
 
+=======
+
+  helper_method :current_user, :logged_in
+>>>>>>> Successfully add a user through postman
 
   def login(user)
     @current_user = user
