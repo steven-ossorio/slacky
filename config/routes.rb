@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'workspace/:id/members', to: 'workspaces#members'
     get 'channel/:id/messages', to: 'channels#messages'
 
+
     delete 'logout', to: 'session#destroy'
   end
 end
