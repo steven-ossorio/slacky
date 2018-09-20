@@ -1,5 +1,9 @@
-class Types::UserType < Types::BaseObject
-  field :id, ID, null: false
-  field :username, String, null: false
-  field :email_address, String, null: false
+module Types
+  UserType = GraphQL::ObjectType.define do
+    name 'User'
+    
+    field :id, !types.ID
+    field :username, !types.String
+    field :email, !types.String, property: :email_address
+  end
 end

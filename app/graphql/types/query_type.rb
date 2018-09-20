@@ -1,13 +1,21 @@
-module Types
-  class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+Types::QueryType = GraphQL::ObjectType.define do
+  name 'Query'
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
-    end
+  field :test_field, types.String do
+    resolve -> (obj, arg, ctx) {
+      "Hello World"
+    }
+  end
+
+  field :user, Types::UserType do 
+    resolve -> (obj, arg, ctx) {
+      User.first
+    }
+  end
+
+  field :allUser, types[Types::UserType] do
+    resolve -> (obj, arg, ctx) {
+      User.all
+    }
   end
 end
