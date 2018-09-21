@@ -21,4 +21,11 @@ Types::QueryType = GraphQL::ObjectType.define do
       Workspace.find(arg[:id])
     }
   end
+
+  field :channel, Types::ChannelType do
+    argument :id, !types.ID
+    resolve -> (obj, arg, ctx) {
+      Channel.find(arg[:id])
+    }
+  end
 end
