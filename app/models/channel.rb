@@ -10,4 +10,11 @@ class Channel < ApplicationRecord
   class_name: :Message,
   foreign_key: :channel_id,
   primary_key: :id
+
+  has_many :memberships,
+  class_name: :Member,
+  foreign_key: :channel_id,
+  primary_key: :id
+
+  has_many :members, through: :memberships, source: :user
 end

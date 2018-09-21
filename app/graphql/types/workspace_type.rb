@@ -5,6 +5,6 @@ module Types
     field :id, !types.ID
     field :user_id, !types.ID
     field :name, !types.String
-    field :members, types[Types::UserType]
+    field :channels, types[Types::ChannelType]
   end
 end
