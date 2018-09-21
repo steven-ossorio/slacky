@@ -6,5 +6,6 @@
     field :user_id, !types.ID
     field :channel_id, !types.ID
     field :text, !types.String
+    field :user, UserType
   end
 end
