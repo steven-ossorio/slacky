@@ -17,6 +17,8 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   primary_key: :id
 
+  has_many :workspaces, through: :membership, source: :workspace
+
   def self.find_by_credentials(email_address, password)
     user = User.find_by(email_address: email_address)
     user && user.is_password?(password) ? user : nil
