@@ -19,4 +19,11 @@ Types::QueryType = GraphQL::ObjectType.define do
       User.all
     }
   end
+
+  field :channel, Types::ChannelType do
+    argument :id, !types.ID
+    resolve -> (obj, arg, ctx) {
+      Channel.find(arg[:id])
+    }
+  end
 end
