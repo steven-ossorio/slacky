@@ -6,5 +6,6 @@ module Types
     field :workspace_id, !types.ID
     field :name, !types.String
     field :members, types[Types::UserType]
+    field :messages, types[Types::MessageType]
   end
 end
