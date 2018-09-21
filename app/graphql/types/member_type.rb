@@ -1,5 +1,9 @@
-class Types::MemberType < Types::BaseObject
-  field :id, ID, null: false
-  field :user_id, ID, null: false
-  field :workspace_id, ID, null: false
+module Types
+  MemberType = GraphQL::ObjectType.define do
+    name 'Member'
+    
+    field :id, !types.ID
+    field :user_id, !types.ID
+    field :workspace_id, !types.ID
+  end
 end

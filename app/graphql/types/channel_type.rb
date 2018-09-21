@@ -1,5 +1,10 @@
-class Types::ChannelType < Types::BaseObject
-  field :id, ID, null: false
-  field :workspace_id, ID, null: false
-  field :name, String, null: false
+module Types
+  ChannelType = GraphQL::ObjectType.define do
+    name 'Channel'
+    
+    field :id, !types.ID
+    field :workspace_id, !types.ID
+    field :name, !types.String
+    field :members, types[Types::UserType]
+  end
 end
