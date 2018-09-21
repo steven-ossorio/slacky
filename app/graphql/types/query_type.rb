@@ -26,4 +26,11 @@ Types::QueryType = GraphQL::ObjectType.define do
       Channel.find(arg[:id])
     }
   end
+
+  field :workspace, Types::WorkspaceType do
+    argument :id, !types.ID
+    resolve -> (obj, arg, ctx) {
+      Workspace.find(arg[:id])
+    }
+  end
 end

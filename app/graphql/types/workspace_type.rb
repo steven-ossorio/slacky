@@ -1,5 +1,10 @@
-class Types::WorkspaceType < Types::BaseObject
-  field :id, ID, null: false
-  field :user_id, ID, null: false
-  field :name, String, null: false
+module Types
+  WorkspaceType = GraphQL::ObjectType.define do
+    name 'Workspace'
+    
+    field :id, !types.ID
+    field :user_id, !types.ID
+    field :name, !types.String
+    field :members, types[Types::UserType]
+  end
 end
