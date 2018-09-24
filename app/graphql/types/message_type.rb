@@ -1,6 +1,11 @@
-class Types::MessageType < Types::BaseObject
-  field :id, ID, null: false
-  field :user_id, ID, null: false
-  field :channel_id, ID, null: false
-  field :text, String, null: false
+ module Types
+  MessageType = GraphQL::ObjectType.define do
+    name 'Message'
+    
+    field :id, !types.ID
+    field :user_id, !types.ID
+    field :channel_id, !types.ID
+    field :text, !types.String
+    field :user, UserType
+  end
 end

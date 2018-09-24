@@ -1,21 +1,24 @@
 Types::QueryType = GraphQL::ObjectType.define do
   name 'Query'
 
-  field :test_field, types.String do
+  field :user, Types::UserType do
+    argument :id, !types.ID 
     resolve -> (obj, arg, ctx) {
-      "Hello World"
+      User.find(arg[:id])
     }
   end
 
-  field :user, Types::UserType do 
+  field :channel, Types::ChannelType do
+    argument :id, !types.ID
     resolve -> (obj, arg, ctx) {
-      User.first
+      Channel.find(arg[:id])
     }
   end
 
-  field :allUser, types[Types::UserType] do
+  field :workspace, Types::WorkspaceType do
+    argument :id, !types.ID
     resolve -> (obj, arg, ctx) {
-      User.all
+      Workspace.find(arg[:id])
     }
   end
 end
