@@ -8,7 +8,7 @@ class Resolvers::CreateUser < GraphQL::Function
   def call(_obj, args, _ctx)
     User.create!(
       email_address: args[:email],
-      password_digest: args[:password],
+      password: args[:password],
       username: args[:username]
     )
   end
