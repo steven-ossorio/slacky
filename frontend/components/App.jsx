@@ -7,8 +7,8 @@ import {
   Switch
 } from "react-router-dom";
 import Landing from "./landing/Landing";
-import Signin from "./Signin";
-import GetStarted from "./GetStarted";
+import Signup from "./Signup";
+import Login from "./Login";
 import YourWorkspaces from "./YourWorkspaces";
 
 const App = () => (
@@ -16,8 +16,8 @@ const App = () => (
     <Router history={hashHistory}>
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/get-started" component={GetStarted} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/your-workspaces" component={YourWorkspaces} />
       </Switch>
     </Router>
