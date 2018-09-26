@@ -3,14 +3,23 @@ import {
   BrowserRouter as Router,
   hashHistory,
   Route,
-  IndexRoute
+  IndexRoute,
+  Switch
 } from "react-router-dom";
-import Landing from "./Landing";
+import Landing from "./landing/Landing";
+import Signin from "./Signin";
+import GetStarted from "./GetStarted";
+import YourWorkspaces from "./YourWorkspaces";
 
 const App = () => (
   <div>
     <Router history={hashHistory}>
-      <Route exact path="/" component={Landing} />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/signin" component={Signin} />
+        <Route exact path="/get-started" component={GetStarted} />
+        <Route exact path="/your-workspaces" component={YourWorkspaces} />
+      </Switch>
     </Router>
   </div>
 );
