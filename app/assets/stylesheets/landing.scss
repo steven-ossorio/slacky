@@ -66,5 +66,15 @@ html {
         font-size: 16px;
       }
     }
+    &-links {
+      &-button {
+        padding: 5px;
+        color: #383aa5;
+        text-decoration: underline;
+      }
+      color: #777;
+      font-size: 15px;
+      font-weight: 300;
+    }
   }
 }
