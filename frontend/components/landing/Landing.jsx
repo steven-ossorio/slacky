@@ -31,8 +31,20 @@ class Landing extends Component {
               />
             </form>
             <div className="landing-container-main-right-links">
-              <Link to="/signin">Sign In</Link>
-              <Link to="/get-started">Get Started</Link>
+              <span>Already have an account?</span>
+              <Link
+                className="landing-container-main-right-links-button"
+                to="/login"
+              >
+                Log In
+              </Link>{" "}
+              <span>or</span>
+              <Link
+                className="landing-container-main-right-links-button"
+                to="/login"
+              >
+                Guest Login
+              </Link>
             </div>
           </div>
         </main>
