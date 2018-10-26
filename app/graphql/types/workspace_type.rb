@@ -4,6 +4,6 @@ Types::WorkspaceType = GraphQL::ObjectType.define do
   field :id, !types.ID
   field :name, !types.String
   field :channels, -> { types[Types::ChannelType] }
-  field :createdBy, -> { Types::UserType }, property: :user
   field :members, -> { !types[Types::UserType] }
+  field :createdBy, -> { Types::UserType }, property: :user
 end
