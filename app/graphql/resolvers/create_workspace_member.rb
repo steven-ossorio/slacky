@@ -4,10 +4,10 @@ class Resolvers::CreateWorkspaceMember < GraphQL::Function
 
   type Types::MemberType
 
-  def call(_obj, args, _ctx)
+  def call(_obj, args, ctx)
     Member.create!(
       workspace_id: args[:workspace_id],
-      user_id: args[:user_id]
+      user: ctx[:current_user]
     )
   end
 end
