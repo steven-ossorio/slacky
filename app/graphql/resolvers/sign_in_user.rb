@@ -8,7 +8,7 @@ class Resolvers::SignInUser < GraphQL::Function
     field :user, Types::UserType
   end
 
-  def call(_obj, args, _ctx)
+  def call(_obj, args, ctx)
     input = args[:email]
 
     return unless input
@@ -21,6 +21,8 @@ class Resolvers::SignInUser < GraphQL::Function
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
 
     session_token = crypt.encrypt_and_sign("user-id:#{user.id}")
+
+    ctx[:session][:session_token] = session_token
 
     OpenStruct.new({
       user: user,
