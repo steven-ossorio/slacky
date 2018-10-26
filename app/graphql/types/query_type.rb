@@ -1,6 +1,12 @@
 Types::QueryType = GraphQL::ObjectType.define do
   name 'Query'
 
+  field :allUsers, !types[Types::UserType] do
+    resolve -> (obj, arg, ctx) {
+      User.all
+    }
+  end
+
   field :user, Types::UserType do
     argument :id, !types.ID 
     resolve -> (obj, arg, ctx) {

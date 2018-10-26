@@ -5,11 +5,10 @@ module Types
 
     field :createMessage, function: Resolvers::CreateMessage.new
 
-
+    field :createWorkspace, function: Resolvers::CreateWorkspace.new
 
     # field :createChannel, function: Resolvers::CreateChannel.new
     # field :createChannelMember, function: Resolvers::CreateChannelMember.new
-    # field :createWorkspace, function: Resolvers::CreateWorkspace.new
     # field :createWorkspaceMember, function: Resolvers::CreateWorkspaceMember.new
     # field :createMessage, function: Resolvers::CreateMessage.new
 
