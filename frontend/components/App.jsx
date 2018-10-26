@@ -1,9 +1,8 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   hashHistory,
   Route,
-  IndexRoute,
   Switch
 } from "react-router-dom";
 import Landing from "./landing/Landing";
