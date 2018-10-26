@@ -1,6 +1,10 @@
 module Types
   class MutationType < Types::BaseObject
     field :createUser, function: Resolvers::CreateUser.new
+    field :signinUser, function: Resolvers::SignInUser.new
+
+
+    
     field :createChannel, function: Resolvers::CreateChannel.new
     field :createChannelMember, function: Resolvers::CreateChannelMember.new
     field :createWorkspace, function: Resolvers::CreateWorkspace.new
