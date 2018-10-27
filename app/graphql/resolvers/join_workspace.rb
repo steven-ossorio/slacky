@@ -1,4 +1,4 @@
-class Resolvers::CreateWorkspaceMember < GraphQL::Function
+class Resolvers::JoinWorkspace < GraphQL::Function
   argument :name, !types.String
 
   type Types::WorkspaceType
