@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  validates :username, :email_address, uniqueness: true
-  validates :username, :email_address, :password_digest, presence: true
+  has_secure_password
+
+  validates :username, :email, uniqueness: true
+  validates :username, :email, :password_digest, presence: true, on: :create
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
@@ -17,10 +19,11 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   primary_key: :id
 
+  has_many :channels, through: :membership, source: :channel
   has_many :workspaces, through: :membership, source: :workspace
 
-  def self.find_by_credentials(email_address, password)
-    user = User.find_by(email_address: email_address)
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
   end
 
