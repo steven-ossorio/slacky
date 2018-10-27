@@ -2,15 +2,29 @@ Types::QueryType = GraphQL::ObjectType.define do
   name 'Query'
 
   field :allUsers, !types[Types::UserType] do
-    resolve -> (obj, arg, ctx) {
+    resolve -> (_obj, _arg, _ctx) {
       User.all
     }
   end
 
   field :user, Types::UserType do
     argument :id, !types.ID 
-    resolve -> (obj, arg, ctx) {
+    resolve -> (_obj, arg, _ctx) {
       User.find(arg[:id])
+    }
+  end
+
+  field :current_user, Types::UserType do
+    resolve ->(_obj, _args, ctx) {
+      ctx[:current_user]
+    }
+  end
+
+  field :userChannels, !types[Types::ChannelType] do
+    argument :workspace_id, !types.ID
+    resolve -> (_obj, arg, ctx) {
+      user = ctx[:current_user]
+      user.channels.where(workspace_id: arg[:workspace_id])
     }
   end
 
@@ -27,4 +41,6 @@ Types::QueryType = GraphQL::ObjectType.define do
       Workspace.find(arg[:id])
     }
   end
+
+  
 end

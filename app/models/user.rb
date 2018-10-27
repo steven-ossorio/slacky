@@ -19,6 +19,7 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   primary_key: :id
 
+  has_many :channels, through: :membership, source: :channel
   has_many :workspaces, through: :membership, source: :workspace
 
   def self.find_by_credentials(email, password)
