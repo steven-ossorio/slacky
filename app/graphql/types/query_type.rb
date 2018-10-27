@@ -7,14 +7,15 @@ Types::QueryType = GraphQL::ObjectType.define do
         User.all
       }
     end
+    
+    field :user, Types::UserType do
+      argument :id, !types.ID 
+      resolve -> (_obj, arg, _ctx) {
+        User.find(arg[:id])
+      }
+    end
   end
 
-  field :user, Types::UserType do
-    argument :id, !types.ID 
-    resolve -> (_obj, arg, _ctx) {
-      User.find(arg[:id])
-    }
-  end
 
   field :current_user, Types::UserType do
     resolve ->(_obj, _args, ctx) {
