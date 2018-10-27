@@ -5,7 +5,7 @@ class Resolvers::CreateWorkspaceMember < GraphQL::Function
 
   def call(_obj, args, ctx)
     workspace = Workspace.find_by(name: args[:name])
-    channel = workspace.channel.where(name: "General")
+    channel = workspace.channels.where(name: "General").first
 
     Member.create!(
       workspace_id: workspace.id,
@@ -13,7 +13,7 @@ class Resolvers::CreateWorkspaceMember < GraphQL::Function
     )
 
     Member.create!(
-      channel_id = channel.id,
+      channel: channel,
       user: ctx[:current_user]
     )
 
