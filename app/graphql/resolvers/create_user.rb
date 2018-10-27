@@ -1,20 +1,14 @@
 class Resolvers::CreateUser < GraphQL::Function
-  AuthProviderInput = GraphQL::InputObjectType.define do
-    name 'AuthProviderSignupData'
-
-    argument :email, Types::AuthProviderEmailInput
-  end
-
   argument :username, !types.String
-  argument :authProvider, !AuthProviderInput
+  argument :authProvider, Types::AuthProviderEmailInput
 
   type Types::UserType
 
   def call(_obj, args, ctx)
     user = User.create!(
       username: args[:username],
-      email: args[:authProvider][:email][:email],
-      password: args[:authProvider][:email][:password]
+      email: args[:authProvider][:email],
+      password: args[:authProvider][:password]
     )
 
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
@@ -27,5 +21,7 @@ class Resolvers::CreateUser < GraphQL::Function
       user: user,
       session_token: session_token
     })
+
+    user
   end
 end
