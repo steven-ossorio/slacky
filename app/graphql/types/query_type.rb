@@ -1,10 +1,12 @@
 Types::QueryType = GraphQL::ObjectType.define do
   name 'Query'
 
-  field :allUsers, !types[Types::UserType] do
-    resolve -> (_obj, _arg, _ctx) {
-      User.all
-    }
+  if Rails.env.development?
+    field :allUsers, !types[Types::UserType] do
+      resolve -> (_obj, _arg, _ctx) {
+        User.all
+      }
+    end
   end
 
   field :user, Types::UserType do
