@@ -6,4 +6,5 @@ Types::UserType = GraphQL::ObjectType.define do
   field :email, !types.String
   # Want to return an array of workspaces current_user is associated with.
   field :workspaces, -> { !types[Types::WorkspaceType] }
+  field :channels, -> { !types[Types::WorkspaceType] }
 end

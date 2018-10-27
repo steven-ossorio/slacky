@@ -1,6 +1,5 @@
 class Resolvers::CreateWorkspaceMember < GraphQL::Function
   argument :workspace_id, !types.ID
-  argument :user_id, !types.ID
 
   type Types::MemberType
 
