@@ -1,6 +1,6 @@
 class Resolvers::CreateUser < GraphQL::Function
   argument :username, !types.String
-  argument :authProvider, Types::AuthProviderEmailInput
+  argument :authProvider, Types::AuthProviderInput
 
   type Types::UserType
 
