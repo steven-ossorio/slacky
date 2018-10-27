@@ -38,9 +38,9 @@ Types::QueryType = GraphQL::ObjectType.define do
   end
 
   field :workspace, Types::WorkspaceType do
-    argument :name, !types.String
+    argument :id, !types.ID
     resolve -> (obj, arg, ctx) {
-      Workspace.find_by(arg[:name])
+      Workspace.find(arg[:id])
     }
   end 
 end
