@@ -3,11 +3,15 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import LoginMutation from "../mutations/Login";
 
+import LoginForm from "./LoginForm";
+
 const LoginFormContainer = () => {
-  console.log("Login form container!");
   return (
     <Mutation mutation={LoginMutation}>
-      {({ mutate: loginUser }) => {
+      {mutate => {
+        const loginUser = ({ email, password }) => {
+          return mutate({ variables: { email, password } });
+        };
         return <LoginForm loginUser={loginUser} />;
       }}
     </Mutation>

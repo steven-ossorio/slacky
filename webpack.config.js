@@ -23,10 +23,11 @@ module.exports = {
     path: __dirname + "/app/assets/javascripts",
     filename: "bundle.js"
   },
+  mode: "development",
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify("production")
+        NODE_ENV: JSON.stringify("development")
       }
     })
   ]

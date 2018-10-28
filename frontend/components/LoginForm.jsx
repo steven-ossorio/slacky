@@ -1,25 +1,29 @@
 import React from "react";
 
 class LoginForm extends React.Component {
-  state = {
-    email: "",
-    password: ""
-  };
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: ""
+    };
+    this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  onChange = field => {
+  onChange(field) {
     return e => {
       this.setState({
         [field]: e.target.value
       });
     };
-  };
+  }
 
-  handleSubmit = () => {
+  handleSubmit() {
     this.props.loginUser(this.state);
-  };
+  }
 
   render() {
-    console.log("login form rendered!");
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -37,6 +41,7 @@ class LoginForm extends React.Component {
             value={this.state.password}
             onChange={this.onChange("password")}
           />
+          <input type="submit" />
         </form>
       </div>
     );
