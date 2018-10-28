@@ -1,0 +1,53 @@
+.navBarContainer {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+}
+
+.innerNav {
+  color: grey;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  letter-spacing: 1px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  display: inline;
+  font-size: 28px;
+  color: #333;
+  font-weight: 700;
+}
+.fa {
+  color: blue;
+}
+
+// &-Nav {
+//   color: grey;
+//   font-weight: 300;
+//   display: flex;
+//   justify-content: space-between;
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   letter-spacing: 1px;
+
+//   a {
+//     text-decoration: none;
+
+//     .Navbar-container-Nav-Logo {
+//       display: inline;
+//       font-size: 28px;
+//       color: #333;
+//       font-weight: 700;
+
+//       .fa {
+//         color: blue;
+//       }
+//     }
+//   }
+// }

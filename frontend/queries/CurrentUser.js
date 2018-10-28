@@ -1,10 +1,9 @@
 import gql from "graphql-tag";
 
 export default gql`
-  query user($id: ID!) {
-    user(id: $id) {
+  query {
+    current_user {
       id
-      email
     }
   }
 `;
