@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Landing from "./landing/Landing";
 import Signup from "./Signup";
-import Login from "./Login";
+import LoginForm from "./LoginFormContainer";
 import YourWorkspaces from "./YourWorkspaces";
 
 const App = () => (
@@ -16,7 +16,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={LoginForm} />
         <Route exact path="/your-workspaces" component={YourWorkspaces} />
       </Switch>
     </Router>
