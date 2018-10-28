@@ -2,6 +2,8 @@ class Resolvers::UpdateMessage < GraphQL::Function
   argument :id, !types.ID
   argument :text, !types.String
 
+  type Types::MessageType
+
   def call(_obj, args, ctx)
     message = Message.find(args[:id])
 

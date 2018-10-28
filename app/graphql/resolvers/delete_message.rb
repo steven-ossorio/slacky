@@ -1,6 +1,8 @@
 class Resolvers::DeleteMessage < GraphQL::Function
   argument :id, !types.ID
 
+  type Types::MessageType
+
   def call(_obj, args, ctx)
     message = Message.find(args[:id])
 
