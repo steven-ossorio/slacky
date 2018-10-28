@@ -7,7 +7,7 @@ export default () => {
       <div className="Navbar-container-Nav">
         <Link to="/">
           <div className="Navbar-container-Nav-Logo">
-            <i class="fa fa-slack" aria-hidden="true" />
+            <i className="fa fa-slack" aria-hidden="true" />
             <span>Slacky</span>
           </div>
         </Link>

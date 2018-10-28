@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Mutation } from "react-apollo";
-import LoginMutation from "../mutations/Login";
+import LoginMutation from "../../mutations/Login";
 
 import LoginForm from "./LoginForm";
 

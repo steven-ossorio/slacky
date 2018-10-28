@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Landing from "./landing/Landing";
 import Signup from "./Signup";
-import LoginForm from "./LoginFormContainer";
+import LoginForm from "./LoginForm/LoginFormContainer";
 import YourWorkspaces from "./YourWorkspaces";
 
 const App = () => (
