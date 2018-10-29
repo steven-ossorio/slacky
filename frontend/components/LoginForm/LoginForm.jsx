@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./LoginFormStyles.scss";
 import NavBar from "../NavBar/NavBar";
+import { Link } from "react-router-dom";
 
 class LoginForm extends React.Component {
   constructor() {
@@ -49,6 +50,12 @@ class LoginForm extends React.Component {
               />
               <input className={styles.loginFormButton} type="submit" />
             </form>
+            <div className={styles.loginFormLinks}>
+              <span>Don't have an account?</span>
+              <Link className={styles.loginLinkButton} to="/signup">
+                Signup
+              </Link>
+            </div>
           </div>
         </div>
       </div>
