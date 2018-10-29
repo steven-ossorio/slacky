@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router";
 import { Mutation } from "react-apollo";
 import LogoutMutation from "../../mutations/Logout";
 import LogoutButton from "./LogoutButton";

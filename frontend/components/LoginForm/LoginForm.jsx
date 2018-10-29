@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
       .loginUser(this.state)
       .then(user => {
         if (user) {
-          this.props.history.push("/randomComponent");
+          this.props.history.push("/");
         }
       })
       .catch(err => console.log(err));

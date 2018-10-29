@@ -5,6 +5,31 @@ import styles from "./LandingStyles.scss";
 
 class Landing extends Component {
   render() {
+    const loggedOutContent = this.props.currentUser ? (
+      ""
+    ) : (
+      <React.Fragment>
+        <form>
+          <input className={styles.signupInput} placeholder="Email Address" />
+          <input
+            type="submit"
+            className={styles.signupButton}
+            value="Get Started"
+          />
+        </form>
+        <div className={styles.landingPageLinks}>
+          <span>Already have an account?</span>
+          <Link className={styles.landingPageButton} to="/login">
+            Log In
+          </Link>{" "}
+          <span>or</span>
+          <Link className={styles.landingPageButton} to="/login">
+            Guest Login
+          </Link>
+        </div>
+      </React.Fragment>
+    );
+
     return (
       <main className="landing-container">
         <NavBar />
@@ -20,27 +45,7 @@ class Landing extends Component {
               budget, measure an A/B test, plan your next office opening, and
               more, Slic has you covered.
             </p>
-            <form>
-              <input
-                className={styles.signupInput}
-                placeholder="Email Address"
-              />
-              <input
-                type="submit"
-                className={styles.signupButton}
-                value="Get Started"
-              />
-            </form>
-            <div className={styles.landingPageLinks}>
-              <span>Already have an account?</span>
-              <Link className={styles.landingPageButton} to="/login">
-                Log In
-              </Link>{" "}
-              <span>or</span>
-              <Link className={styles.landingPageButton} to="/login">
-                Guest Login
-              </Link>
-            </div>
+            {loggedOutContent}
           </div>
         </main>
       </main>

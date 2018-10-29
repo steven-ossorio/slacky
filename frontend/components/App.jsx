@@ -5,18 +5,17 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import Landing from "./Landing/Landing";
-import Signup from "./Signup";
+import LandingContainer from "./Landing/LandingContainer";
+import Signup from "./SignupForm/SignupFormContainer";
 import LoginForm from "./LoginForm/LoginFormContainer";
 import YourWorkspaces from "./YourWorkspaces";
-import RandomComponent from "../components/randomComponent";
 
 const App = () => (
   <div>
     <Router history={hashHistory}>
       <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/randomComponent" component={RandomComponent} />
+        <Route exact path="/" component={LandingContainer} />
+        {/* <Route exact path="/randomComponent" component={LoggedinPage} /> */}
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/your-workspaces" component={YourWorkspaces} />

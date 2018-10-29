@@ -1,7 +1,6 @@
 import React from "react";
 import { Query, Mutation } from "react-apollo";
 import LoginMutation from "../../mutations/Login";
-import { Redirect } from "react-router-dom";
 import CurrentUserQuery from "../../queries/CurrentUser";
 import LoginForm from "./LoginForm";
 
