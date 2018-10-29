@@ -1,9 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import { Link } from "react-router-dom";
 import NavBarContainer from "../NavBar/NavBarContainer";
 import styles from "./LandingStyles.scss";
 
 class Landing extends Component {
+  constructor() {
+    super();
+
+    this.state = {};
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (this.props.currentUser !== nextProps.currentUser) {
+      return true;
+    }
+
+    return false;
+  }
+
   render() {
     const loggedOutContent = this.props.currentUser ? (
       ""
@@ -25,6 +39,10 @@ class Landing extends Component {
           <span>or</span>
           <Link className={styles.landingPageButton} to="/login">
             Guest Login
+          </Link>
+          <span>or</span>
+          <Link className={styles.landingPageButton} to="/signup">
+            Signup
           </Link>
         </div>
       </React.Fragment>

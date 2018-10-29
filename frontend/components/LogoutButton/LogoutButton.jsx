@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import styles from "./LogoutButtonStyles.scss";
 
 class LogoutButton extends React.Component {
@@ -11,9 +11,7 @@ class LogoutButton extends React.Component {
 
   logoutUser() {
     this.props.logoutUser();
-    this.props.history.push({
-      pathname: "/"
-    });
+    return <Redirect to="/" />;
   }
 
   render() {

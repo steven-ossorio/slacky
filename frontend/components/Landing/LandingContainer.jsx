@@ -5,13 +5,15 @@ import Landing from "./Landing";
 
 const LandingContainer = () => {
   return (
-    <Query query={CurrentUserQuery}>
+    <Query
+      query={CurrentUserQuery}
+      refetchQueries={[{ query: CurrentUserQuery }]}
+    >
       {({ loading, data }) => {
         if (loading) {
           return "";
         }
         if (data.current_user && data.current_user.id) {
-          console.log("I'm here");
           return <Landing currentUser={data.current_user} />;
         } else {
           return <Landing />;

@@ -9,7 +9,7 @@ const NavBar = props => {
   return (
     <div className={styles.navBarContainer}>
       <div className={styles.innerNav}>
-        <Link to="/">
+        <Link to="/" replace>
           <div className={styles.logo}>
             <i className={`fa fa-slack ${styles.fa}`} aria-hidden="true" />
             <span>Slacky</span>

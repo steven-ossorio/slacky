@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../NavBar/NavBar";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class SignupForm extends Component {
   constructor() {
@@ -25,10 +25,10 @@ class SignupForm extends Component {
 
   handleSubmit() {
     this.props
-      .loginUser(this.state)
+      .signupUser(this.state)
       .then(user => {
         if (user) {
-          this.props.history.push("/randomComponent");
+          this.props.history.push("/");
         }
       })
       .catch(err => console.log(err));
@@ -50,7 +50,7 @@ class SignupForm extends Component {
               onSubmit={this.handleSubmit}
             >
               <div className="login-container-box-form-header">
-                Login To Slacky
+                Signup To Slacky
               </div>
               <input
                 type="text"
@@ -96,4 +96,4 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm;
+export default withRouter(SignupForm);

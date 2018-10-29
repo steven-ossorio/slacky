@@ -7,8 +7,8 @@ const SignupFormContainer = () => {
   return (
     <Mutation mutation={SignupMutation}>
       {mutate => {
-        const signupUser = ({ email, password }) => {
-          return mutate({ variables: { email, password } });
+        const signupUser = ({ username, email, password }) => {
+          return mutate({ variables: { username, email, password } });
         };
         return <SignupForm signupUser={signupUser} />;
       }}

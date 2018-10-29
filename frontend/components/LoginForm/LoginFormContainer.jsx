@@ -6,7 +6,10 @@ import LoginForm from "./LoginForm";
 
 const LoginFormContainer = () => {
   return (
-    <Mutation mutation={LoginMutation}>
+    <Mutation
+      mutation={LoginMutation}
+      refetchQueries={[{ query: CurrentUserQuery }]}
+    >
       {mutate => {
         const loginUser = ({ email, password }) => {
           return mutate({ variables: { email, password } });
