@@ -1,9 +1,9 @@
 import React from "react";
 import { Query } from "react-apollo";
 import CurrentUserQuery from "../../queries/CurrentUser";
-import Landing from "./Landing";
+import NavBar from "./NavBar";
 
-const LandingContainer = () => {
+const NavBarContainer = () => {
   return (
     <Query query={CurrentUserQuery}>
       {({ loading, data }) => {
@@ -11,14 +11,13 @@ const LandingContainer = () => {
           return "";
         }
         if (data.current_user && data.current_user.id) {
-          console.log("I'm here");
-          return <Landing currentUser={data.current_user} />;
+          return <NavBar currentUser={data.current_user} />;
         } else {
-          return <Landing />;
+          return <NavBar />;
         }
       }}
     </Query>
   );
 };
 
-export default LandingContainer;
+export default NavBarContainer;

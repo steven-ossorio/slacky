@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styles from "./NavBarStyles.scss";
+import LogoutButtonContainer from "../LogoutButton/LogoutButtonContainer";
 
-export default () => {
+const NavBar = props => {
+  let workspaces = props.currentUser ? <LogoutButtonContainer /> : "";
+
   return (
     <div className={styles.navBarContainer}>
       <div className={styles.innerNav}>
@@ -12,7 +15,9 @@ export default () => {
             <span>Slacky</span>
           </div>
         </Link>
+        {workspaces}
       </div>
     </div>
   );
 };
+export default withRouter(NavBar);

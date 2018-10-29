@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
+import NavBarContainer from "../NavBar/NavBarContainer";
 import styles from "./LandingStyles.scss";
 
 class Landing extends Component {
@@ -32,7 +32,7 @@ class Landing extends Component {
 
     return (
       <main className="landing-container">
-        <NavBar />
+        <NavBarContainer />
         <main className={styles.landingContainerMain}>
           <div className={styles.landingContainerMainLeft} />
           <div className={styles.landingContainerMainRight}>
