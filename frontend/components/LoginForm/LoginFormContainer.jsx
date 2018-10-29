@@ -1,11 +1,9 @@
 import React from "react";
-
 import { Query, Mutation } from "react-apollo";
 import LoginMutation from "../../mutations/Login";
-
+import { Redirect } from "react-router-dom";
 import CurrentUserQuery from "../../queries/CurrentUser";
 import LoginForm from "./LoginForm";
-import { check } from "graphql-anywhere";
 
 const LoginFormContainer = () => {
   return (
@@ -28,9 +26,7 @@ const checkUserContainer = () => {
           return "";
         }
         if (data.current_user && data.current_user.id) {
-          // <Redirect to={}/>
-          console.log("logged in!");
-          return "";
+          return <LoginFormContainer />;
         } else {
           return <LoginFormContainer />;
         }
