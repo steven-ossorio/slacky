@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  HashRouter as Router,
-  hashHistory,
-  Route,
-  Switch
-} from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import LandingContainer from "./Landing/LandingContainer";
 import Signup from "./SignupForm/SignupFormContainer";
 import LoginForm from "./LoginForm/LoginFormContainer";
@@ -12,7 +7,7 @@ import YourWorkspaces from "./YourWorkspaces";
 
 const App = () => (
   <div>
-    <Router history={hashHistory}>
+    <Router>
       <Switch>
         <Route exact path="/" component={LandingContainer} />
         {/* <Route exact path="/randomComponent" component={LoggedinPage} /> */}
