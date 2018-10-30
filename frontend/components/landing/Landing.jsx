@@ -1,51 +1,55 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar";
+import NavBarContainer from "../NavBar/NavBarContainer";
+import styles from "./LandingStyles.scss";
 
-class Landing extends Component {
+class Landing extends PureComponent {
   render() {
+    const loggedOutContent = this.props.currentUser ? (
+      ""
+    ) : (
+      <React.Fragment>
+        <form>
+          <input className={styles.signupInput} placeholder="Email Address" />
+          <input
+            type="submit"
+            className={styles.signupButton}
+            value="Get Started"
+          />
+        </form>
+        <div className={styles.landingPageLinks}>
+          <span>Already have an account?</span>
+          <Link className={styles.landingPageButton} to="/login">
+            Log In
+          </Link>{" "}
+          <span>or</span>
+          <Link className={styles.landingPageButton} to="/login">
+            Guest Login
+          </Link>
+          <span>or</span>
+          <Link className={styles.landingPageButton} to="/signup">
+            Signup
+          </Link>
+        </div>
+      </React.Fragment>
+    );
+
     return (
       <main className="landing-container">
-        <NavBar />
-        <main className="landing-container-main">
-          <div className="landing-container-main-left" />
-          <div className="landing-container-main-right">
-            <p className="landing-container-main-right-header">
+        <NavBarContainer />
+        <main className={styles.landingContainerMain}>
+          <div className={styles.landingContainerMainLeft} />
+          <div className={styles.landingContainerMainRight}>
+            <p className={styles.landingContainerMainRightHeader}>
               Where It Happens
             </p>
-            <p className="landing-container-main-right-body">
+            <p className={styles.landingContainerMainRightBody}>
               When your team needs to kick off a project, hire a new employee,
               deploy some code, review a sales contract, finalize next year's
               budget, measure an A/B test, plan your next office opening, and
               more, Slic has you covered.
             </p>
-            <form className="landing-container-main-right-form">
-              <input
-                className="landing-container-main-right-form-signup-input"
-                placeholder="Email Address"
-              />
-              <input
-                type="submit"
-                className="landing-container-main-right-form-signup-button"
-                value="Get Started"
-              />
-            </form>
-            <div className="landing-container-main-right-links">
-              <span>Already have an account?</span>
-              <Link
-                className="landing-container-main-right-links-button"
-                to="/login"
-              >
-                Log In
-              </Link>{" "}
-              <span>or</span>
-              <Link
-                className="landing-container-main-right-links-button"
-                to="/login"
-              >
-                Guest Login
-              </Link>
-            </div>
+            {loggedOutContent}
           </div>
         </main>
       </main>

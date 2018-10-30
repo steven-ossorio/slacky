@@ -12,13 +12,32 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["react", "env"]
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: ["emotion", "@babel/plugin-proposal-class-properties"]
           }
         }
+      },
+      {
+        test: /\.s?css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+            }
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
       }
     ]
   },
-  resolve: { extensions: [".js", ".jsx"] },
+  resolve: { extensions: [".js", ".jsx", ".sass"] },
   output: {
     path: __dirname + "/app/assets/javascripts",
     filename: "bundle.js"
