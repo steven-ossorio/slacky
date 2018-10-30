@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBarStyles.scss";
-import LogoutButtonContainer from "../LogoutButton/LogoutButtonContainer";
+import DropDown from "../DropDown/DropDown";
 
 const NavBar = props => {
-  let workspaces = props.currentUser ? <LogoutButtonContainer /> : "";
+  let workspaces = props.currentUser ? <DropDown /> : "";
 
   return (
     <div className={styles.navBarContainer}>
