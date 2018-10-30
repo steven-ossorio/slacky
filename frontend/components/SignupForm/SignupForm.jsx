@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../NavBar/NavBar";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SignupForm extends Component {
   state = {
@@ -90,4 +90,4 @@ class SignupForm extends Component {
   }
 }
 
-export default withRouter(SignupForm);
+export default SignupForm;

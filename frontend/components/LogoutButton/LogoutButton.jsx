@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter, Redirect } from "react-router-dom";
 import styles from "./LogoutButtonStyles.scss";
 
 class LogoutButton extends React.Component {
@@ -18,4 +17,4 @@ class LogoutButton extends React.Component {
   }
 }
 
-export default withRouter(LogoutButton);
+export default LogoutButton;

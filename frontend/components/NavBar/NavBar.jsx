@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./NavBarStyles.scss";
 import LogoutButtonContainer from "../LogoutButton/LogoutButtonContainer";
 
@@ -20,4 +20,4 @@ const NavBar = props => {
     </div>
   );
 };
-export default withRouter(NavBar);
+export default NavBar;
