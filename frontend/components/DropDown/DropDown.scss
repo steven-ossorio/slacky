@@ -1,0 +1,23 @@
+.dropDownContainer {
+  border-radius: 4px;
+  padding: 0.5rem 1rem 1rem 1rem;
+  right: 7rem;
+  width: 18rem;
+  display: block;
+  position: absolute;
+  text-align: left;
+  top: 70px;
+  border-top: 1px solid #ebebeb;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 275px;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.dropDownLogoutButton > div > button {
+  font-size: 14px;
+  letter-spacing: 0.5rem;
+  margin-top: 10px;
+  width: 100%;
+}
