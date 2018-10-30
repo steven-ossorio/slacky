@@ -2,9 +2,10 @@ import React from "react";
 import { Query, Mutation } from "react-apollo";
 import LoginMutation from "../../mutations/Login";
 import CurrentUserQuery from "../../queries/CurrentUser";
+import { withRouter } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
-const LoginFormContainer = () => {
+const LoginFormContainer = props => {
   return (
     <Mutation
       mutation={LoginMutation}
@@ -14,13 +15,13 @@ const LoginFormContainer = () => {
         const loginUser = ({ email, password }) => {
           return mutate({ variables: { email, password } });
         };
-        return <LoginForm loginUser={loginUser} />;
+        return <LoginForm loginUser={loginUser} history={props.history} />;
       }}
     </Mutation>
   );
 };
 
-const checkUserContainer = () => {
+const checkUserContainer = props => {
   return (
     <Query query={CurrentUserQuery}>
       {({ loading, data }) => {
@@ -28,13 +29,13 @@ const checkUserContainer = () => {
           return "";
         }
         if (data.current_user && data.current_user.id) {
-          return <LoginFormContainer />;
+          return <LoginFormContainer history={props.history} />;
         } else {
-          return <LoginFormContainer />;
+          return <LoginFormContainer history={props.history} />;
         }
       }}
     </Query>
   );
 };
 
-export default checkUserContainer;
+export default withRouter(checkUserContainer);

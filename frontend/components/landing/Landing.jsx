@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import NavBarContainer from "../NavBar/NavBarContainer";
 import styles from "./LandingStyles.scss";

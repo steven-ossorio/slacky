@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LoginFormStyles.scss";
 import NavBar from "../NavBar/NavBar";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LogoutButton from "../LogoutButton/LogoutButtonContainer";
 
 class LoginForm extends React.Component {
@@ -73,4 +73,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default LoginForm;
