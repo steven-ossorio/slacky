@@ -5,25 +5,20 @@ import { Link, withRouter } from "react-router-dom";
 import LogoutButton from "../LogoutButton/LogoutButtonContainer";
 
 class LoginForm extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: ""
-    };
-    this.onChange = this.onChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    email: "",
+    password: ""
+  };
 
-  onChange(field) {
+  onChange = field => {
     return e => {
       this.setState({
         [field]: e.target.value
       });
     };
-  }
+  };
 
-  handleSubmit() {
+  handleSubmit = () => {
     this.props
       .loginUser(this.state)
       .then(user => {
@@ -37,7 +32,7 @@ class LoginForm extends React.Component {
       email: "",
       password: ""
     });
-  }
+  };
 
   render() {
     let signedIn = this.props.currentUser ? <LogoutButton /> : "";

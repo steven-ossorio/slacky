@@ -3,27 +3,21 @@ import NavBar from "../NavBar/NavBar";
 import { Link, withRouter } from "react-router-dom";
 
 class SignupForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      username: "",
-      email: "",
-      password: ""
-    };
+  state = {
+    username: "",
+    email: "",
+    password: ""
+  };
 
-    this.onChange = this.onChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  onChange(field) {
+  onChange = field => {
     return e => {
       this.setState({
         [field]: e.target.value
       });
     };
-  }
+  };
 
-  handleSubmit() {
+  handleSubmit = () => {
     this.props
       .signupUser(this.state)
       .then(user => {
@@ -37,7 +31,7 @@ class SignupForm extends Component {
       email: "",
       password: ""
     });
-  }
+  };
 
   render() {
     return (

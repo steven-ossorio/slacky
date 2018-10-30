@@ -4,12 +4,6 @@ import NavBarContainer from "../NavBar/NavBarContainer";
 import styles from "./LandingStyles.scss";
 
 class Landing extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
-
   shouldComponentUpdate(nextProps) {
     if (this.props.currentUser !== nextProps.currentUser) {
       return true;
