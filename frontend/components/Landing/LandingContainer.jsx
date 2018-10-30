@@ -5,10 +5,7 @@ import Landing from "./Landing";
 
 const LandingContainer = () => {
   return (
-    <Query
-      query={CurrentUserQuery}
-      refetchQueries={[{ query: CurrentUserQuery }]}
-    >
+    <Query query={CurrentUserQuery}>
       {({ loading, data }) => {
         if (loading) {
           return "";
