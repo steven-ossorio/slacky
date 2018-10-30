@@ -5,7 +5,6 @@ import styles from "./LogoutButtonStyles.scss";
 class LogoutButton extends React.Component {
   logoutUser = () => {
     this.props.logoutUser();
-    return <Redirect to="/" />;
   };
 
   render() {

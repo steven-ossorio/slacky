@@ -1,17 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import NavBarContainer from "../NavBar/NavBarContainer";
 import styles from "./LandingStyles.scss";
 
-class Landing extends Component {
-  shouldComponentUpdate(nextProps) {
-    if (this.props.currentUser !== nextProps.currentUser) {
-      return true;
-    }
-
-    return false;
-  }
-
+class Landing extends PureComponent {
   render() {
     const loggedOutContent = this.props.currentUser ? (
       ""
