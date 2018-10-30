@@ -16,6 +16,12 @@ class Resolvers::CreateWorkspace < GraphQL::Function
       workspace_id: workspace.id
     )
 
+    # New User joins the Workspace.
+    Member.create!(
+      workspace_id: workspace.id,
+      user: ctx[:current_user]
+    )
+
     # New User joins the general channel upon joining.
     Member.create!(
       channel_id: channel.id,

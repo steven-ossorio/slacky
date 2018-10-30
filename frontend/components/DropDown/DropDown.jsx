@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "../LogoutButton/LogoutButtonStyles.scss";
 import LogoutButtonContainer from "../LogoutButton/LogoutButtonContainer";
+import WorkspaceList from "../Workspace/WorkspaceList";
 
 class DropDown extends Component {
   state = {
@@ -23,7 +24,7 @@ class DropDown extends Component {
           <ul className="post-dropdown">
             <div className="post-options">
               <li className="selection-option">
-                <p>NICE</p>
+                <WorkspaceList workspaces={this.props.workspaces} />
               </li>
               <li className="selection-option">
                 <LogoutButtonContainer />
