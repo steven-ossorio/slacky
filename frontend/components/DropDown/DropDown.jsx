@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import styles from "../LogoutButton/LogoutButtonStyles.scss";
+import buttonStyle from "../LogoutButton/LogoutButtonStyles.scss";
 import LogoutButtonContainer from "../LogoutButton/LogoutButtonContainer";
 import WorkspaceList from "../Workspace/WorkspaceList";
+import styles from "./DropDown.scss";
 
 class DropDown extends Component {
   state = {
@@ -20,17 +21,17 @@ class DropDown extends Component {
     let menu;
     if (this.state.menuActive) {
       menu = (
-        <div className="post-dropdown-container">
-          <ul className="post-dropdown">
-            <div className="post-options">
-              <li className="selection-option">
+        <div className={styles.dropDownContainer}>
+          <div className="dropdown">
+            <div className="options">
+              <div className="selection-option">
                 <WorkspaceList workspaces={this.props.workspaces} />
-              </li>
-              <li className="selection-option">
+              </div>
+              <div className={styles.dropDownLogoutButton}>
                 <LogoutButtonContainer />
-              </li>
+              </div>
             </div>
-          </ul>
+          </div>
         </div>
       );
     } else {
@@ -40,7 +41,10 @@ class DropDown extends Component {
     return (
       <div id="menu">
         <div>
-          <button className={styles.logoutButton} onClick={this.toggleMenu}>
+          <button
+            className={buttonStyle.logoutButton}
+            onClick={this.toggleMenu}
+          >
             Your Workspaces
           </button>
         </div>
