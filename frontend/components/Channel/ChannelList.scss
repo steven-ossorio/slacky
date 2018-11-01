@@ -1,0 +1,47 @@
+.channelListContainer {
+  background-color: #4f3448;
+  min-width: 220px;
+  font-size: 15px;
+  font-weight: 300;
+  height: 100%;
+  position: relative;
+}
+
+.channelListHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 20px;
+}
+
+.channelListHeader {
+  width: 190px;
+  padding: 2px 0px 2px 15px;
+  margin-bottom: 3px;
+}
+
+.channelListHeaderPLus {
+  color: #aaa;
+  padding: 2px 4px;
+  border-radius: 20%;
+  position: absolute;
+  left: 180px;
+}
+
+.channelListLiContainer {
+  list-style: none;
+}
+
+.channelListLi {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.channeListLiContent {
+  padding: 7px 15px 6px 15px;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

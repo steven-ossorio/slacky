@@ -7,10 +7,10 @@ const WorkspaceList = props => {
     return <div>Current Not Joined to any Workspace.</div>;
   }
   let workspaces = props.workspaces.map(workspace => {
-    let name = workspace.name.split(" ").join("");
+    let { id, name } = workspace;
     return (
-      <Link key={workspace.id} to={`/workspace/${name}`}>
-        <li className={styles.workspaceList}>{workspace.name}</li>
+      <Link key={workspace.id} to={`/workspace/${id}`}>
+        <li className={styles.workspaceList}>{name}</li>
       </Link>
     );
   });

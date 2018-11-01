@@ -4,7 +4,6 @@ import styles from "./NavBarStyles.scss";
 import DropDown from "../DropDown/DropDown";
 
 const NavBar = props => {
-  console.log(props);
   let workspaces = props.currentUser ? (
     <DropDown workspaces={props.currentUser.workspaces} />
   ) : (

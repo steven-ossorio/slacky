@@ -1,0 +1,26 @@
+.userInfoDropDown {
+  color: white;
+  cursor: pointer;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.userInfoDropDown:hover {
+  background-color: #301c2b;
+}
+
+.userInfoTitle {
+  font-weight: 500;
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+
+.userInfoUsername {
+  display: flex;
+  font-weight: 300;
+  font-size: 13px;
+}
