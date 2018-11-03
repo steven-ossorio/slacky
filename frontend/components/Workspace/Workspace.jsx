@@ -5,11 +5,10 @@ import UserInfo from "../UserInfo/UserInfo";
 
 class Workspace extends Component {
   render() {
-    console.log(this.props);
     const { currentUser, workspace } = this.props;
     return (
       <div className={styles.temporary}>
-        <div className={styles.leftSide}>
+        {/* <div className={styles.leftSide}>
           <div>
             {" "}
             <UserInfo currentUser={currentUser} title={workspace.name} />{" "}
@@ -23,7 +22,8 @@ class Workspace extends Component {
           <div>Messages of the channel</div>
           <div>Create a message form</div>
         </div>
-        <div className="right">members</div>
+        <div className="right">members</div> */}
+        <p>Hello</p>
       </div>
     );
   }

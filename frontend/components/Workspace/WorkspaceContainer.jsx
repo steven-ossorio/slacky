@@ -32,6 +32,7 @@ const WorkspaceContainer = ({ currentUser, id }) => {
 };
 
 const CurrentUser = props => {
+  console.log(props);
   return (
     <Query query={CurrentUserQuery}>
       {({ loading, data }) => {

@@ -5,7 +5,7 @@ import styles from "./LandingStyles.scss";
 
 class Landing extends PureComponent {
   render() {
-    const loggedOutContent = this.props.currentUser ? (
+    const loggedOutContent = this.props.currentUserName ? (
       ""
     ) : (
       <React.Fragment>

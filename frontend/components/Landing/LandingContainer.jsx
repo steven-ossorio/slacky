@@ -1,22 +1,16 @@
 import React from "react";
-import { Query } from "react-apollo";
-import CurrentUserQuery from "../../queries/CurrentUser";
 import Landing from "./Landing";
+
+import { CurrentUserContext } from "../App";
 
 const LandingContainer = () => {
   return (
-    <Query query={CurrentUserQuery}>
-      {({ loading, data }) => {
-        if (loading) {
-          return "";
-        }
-        if (data.current_user && data.current_user.id) {
-          return <Landing currentUser={data.current_user} />;
-        } else {
-          return <Landing />;
-        }
+    <CurrentUserContext.Consumer>
+      {context => {
+        const { username, id } = context;
+        return <Landing currentUserId={id} currentUserName={username} />;
       }}
-    </Query>
+    </CurrentUserContext.Consumer>
   );
 };
 
