@@ -3,15 +3,15 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import LandingContainer from "./Landing/LandingContainer";
 import Signup from "./SignupForm/SignupFormContainer";
 import LoginForm from "./LoginForm/LoginFormContainer";
-import WorkspaceContainer from "../components/Workspace/WorkspaceContainer";
-import WorkspaceIndex from "../components/Workspace/WorkspaceIndex";
-import Workspace from "./Workspace/Workspace";
-import ChannelIndex from "../components/Channel/ChannelIndex";
+import WorkspaceIndexContainer from "../components/WorkspaceIndex/WorkspaceIndexContainer";
 
 import { Query, Mutation } from "react-apollo";
 import LoginMutation from "../mutations/Login";
 import CurrentUserQuery from "../queries/CurrentUser";
 import LogoutMutation from "../mutations/Logout";
+import ChannelIndexContainer from "./ChannelsIndex/ChannelIndexContainer";
+import MessageIndexContainer from "./MessageIndex/MessageIndexContainer";
+import styles from "./App.scss";
 
 export const CurrentUserContext = React.createContext({
   id: null,
@@ -80,20 +80,21 @@ const CurrentUserContextProvider = ({ children }) => {
 };
 
 const App = () => (
-  <div>
+  <div className={styles.workspaceContainer}>
     <Router>
       <CurrentUserContextProvider>
-        <Switch>
-          <Route exact path="/" component={LandingContainer} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={LoginForm} />
-          <Route exact path="/workspace/:id" component={WorkspaceIndex} />
-          <Route
-            exact
-            path="/workspace/:id/channel/:id"
-            component={ChannelIndex}
-          />
-        </Switch>
+        <Route exact path="/" component={LandingContainer} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/login" component={LoginForm} />
+        <Route path="/workspace" component={WorkspaceIndexContainer} />
+        <Route
+          path="/workspace/:workspaceId"
+          component={ChannelIndexContainer}
+        />
+        <Route
+          path="/workspace/:workspaceId/channel/:channelId"
+          component={MessageIndexContainer}
+        />
       </CurrentUserContextProvider>
     </Router>
   </div>

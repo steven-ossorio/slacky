@@ -4,7 +4,10 @@ export default gql`
   query {
     current_user {
       id
-      username
+      workspaces {
+        id
+        name
+      }
     }
   }
 `;
