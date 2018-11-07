@@ -1,0 +1,29 @@
+.messageForm {
+  display: block;
+  width: 96%;
+  border: 1px solid rgba(160, 160, 162, 0.7);
+  border-radius: 0.375rem;
+  box-shadow: none;
+  overflow: auto;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  height: 40px;
+  min-width: 500px;
+  justify-content: flex-end;
+
+  form {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.messageFormInput {
+  height: 95%;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+  flex: 1;
+  font-weight: 400;
+  color: #2c2d30;
+}

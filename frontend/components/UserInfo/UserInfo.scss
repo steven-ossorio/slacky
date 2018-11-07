@@ -1,26 +1,49 @@
-.userInfoDropDown {
-  color: white;
-  cursor: pointer;
-  height: 60px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-left: 15px;
-  padding-top: 10px;
+.workspaceLeftHeaderTitle {
+  font-weight: 900;
+  font-size: 19px;
+  padding-top: 13px;
+  margin-left: 15px;
 }
 
-.userInfoDropDown:hover {
-  background-color: #301c2b;
+.workspaceLeftHeaderUsernameContainer {
+  font-weight: 300px;
+  margin-left: 30px;
+  margin-top: 4px;
 }
 
-.userInfoTitle {
+.workspaceLeftHeaderUsername {
+  margin-left: 4px;
+  font-size: 0.87rem;
   font-weight: 500;
-  font-size: 17px;
-  padding-bottom: 5px;
+
+  &:hover {
+    color: whitel;
+  }
 }
 
-.userInfoUsername {
-  display: flex;
-  font-weight: 300;
-  font-size: 13px;
-}
+// .userInfoDropDown {
+//   color: white;
+//   cursor: pointer;
+//   height: 60px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   padding-left: 15px;
+//   padding-top: 10px;
+// }
+
+// .userInfoDropDown:hover {
+//   background-color: #301c2b;
+// }
+
+// .userInfoTitle {
+//   font-weight: 500;
+//   font-size: 17px;
+//   padding-bottom: 5px;
+// }
+
+// .userInfoUsername {
+//   display: flex;
+//   font-weight: 300;
+//   font-size: 13px;
+// }

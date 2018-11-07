@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styles from "./ChannelIndex.scss";
+import UserInfoContainer from "../UserInfo/UserInfoContainer";
 
 class ChannelIndex extends Component {
   render() {
@@ -9,19 +10,22 @@ class ChannelIndex extends Component {
       return (
         <Link key={id} to={`/workspace/${workspaceId}/channel/${id}`}>
           <li className={styles.channelListLi}>
-            <div className={styles.channeListLiContent}>{`# ${name}`}</div>
+            <div className={styles.channeListLiContent}>
+              <span>#</span>
+              {name}
+            </div>
           </li>
         </Link>
       );
     });
     return (
-      <div className={styles.channelListContainer}>
+      <>
         <div className={styles.channelListHeaderContainer}>
-          <h3 className={styles.channelListHeader}>Channels</h3>
+          <h1 className={styles.channelListHeader}>Channels</h1>
           <div className={styles.channelListHeaderPLus}>+</div>
         </div>
         <ul className={styles.channelListLiContainer}>{channelList}</ul>
-      </div>
+      </>
     );
   }
 }

@@ -1,18 +1,18 @@
 import React from "react";
 import { Query } from "react-apollo";
-import ChannelMessagesQuery from "../../queries/ChannelMessages";
-import MessageIndex from "./MesssageIndex";
+import ChannelQuery from "../../queries/Channel";
+import ChannelInfo from "./ChannelInfo";
 
-const MessageIndexContainer = props => {
+const ChannelInfoContainer = props => {
   let id = props.match.params.channelId;
   return (
-    <Query query={ChannelMessagesQuery} variables={{ id }}>
+    <Query query={ChannelQuery} variables={{ id }}>
       {({ loading, error, data }) => {
         if (loading || !data.channel) {
           return <div>Loading...</div>;
         }
         if (data.channel) {
-          return <MessageIndex messages={data.channel.messages.edges} />;
+          return <ChannelInfo channel={data.channel} />;
         } else {
           return "";
         }
@@ -20,4 +20,5 @@ const MessageIndexContainer = props => {
     </Query>
   );
 };
-export default MessageIndexContainer;
+
+export default ChannelInfoContainer;

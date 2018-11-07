@@ -5,9 +5,12 @@ import styles from "./WorkspaceIndex.scss";
 const WorkspaceIndex = ({ workspaces }) => {
   let workspacesList = workspaces.map(({ id, name }) => {
     return (
-      <Link to={`/workspace/${id}`} key={id}>
+      <Link
+        className={styles.workspaceIndexContainer}
+        to={`/workspace/${id}`}
+        key={id}
+      >
         <div className={styles.workspaceImage} />
-        {/* <li>{name}</li> */}
       </Link>
     );
   });

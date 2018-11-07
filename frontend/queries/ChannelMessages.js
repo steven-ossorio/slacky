@@ -9,6 +9,7 @@ export default gql`
           node {
             id
             text
+            created_at
             postedBy {
               id
               username

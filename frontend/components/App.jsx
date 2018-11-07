@@ -12,6 +12,9 @@ import LogoutMutation from "../mutations/Logout";
 import ChannelIndexContainer from "./ChannelsIndex/ChannelIndexContainer";
 import MessageIndexContainer from "./MessageIndex/MessageIndexContainer";
 import styles from "./App.scss";
+import UserInfoContainer from "./UserInfo/UserInfoContainer";
+import MessageFormContainer from "./MessageForm/MessageFormContainer";
+import ChannelInfoContainer from "./ChannelInfo/ChannelInfoContainer";
 
 export const CurrentUserContext = React.createContext({
   id: null,
@@ -80,23 +83,51 @@ const CurrentUserContextProvider = ({ children }) => {
 };
 
 const App = () => (
-  <div className={styles.workspaceContainer}>
-    <Router>
-      <CurrentUserContextProvider>
-        <Route exact path="/" component={LandingContainer} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={LoginForm} />
-        <Route path="/workspace" component={WorkspaceIndexContainer} />
-        <Route
-          path="/workspace/:workspaceId"
-          component={ChannelIndexContainer}
-        />
-        <Route
-          path="/workspace/:workspaceId/channel/:channelId"
-          component={MessageIndexContainer}
-        />
-      </CurrentUserContextProvider>
-    </Router>
-  </div>
+  <Router>
+    <CurrentUserContextProvider>
+      <Route exact path="/" component={LandingContainer} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/login" component={LoginForm} />
+      <div className={styles.workspaceContainer}>
+        <div className={styles.workspaceList}>
+          <Route path="/workspace" component={WorkspaceIndexContainer} />
+        </div>
+        <div className={styles.workspaceLeft}>
+          <div className={styles.workspaceLeftHeader}>
+            <Route
+              path="/workspace/:workspaceId"
+              component={UserInfoContainer}
+            />
+          </div>
+          <div className={styles.workspaceLeftChannelList}>
+            <Route
+              path="/workspace/:workspaceId"
+              component={ChannelIndexContainer}
+            />
+          </div>
+        </div>
+        <div className={styles.channelContainer}>
+          <div className={styles.channelContainerHeader}>
+            <Route
+              path="/workspace/:workspaceId/channel/:channelId"
+              component={ChannelInfoContainer}
+            />
+          </div>
+          <div className={styles.channelContainerMain}>
+            <div className={styles.channelContainerMainLeft}>
+              <Route
+                path="/workspace/:workspaceId/channel/:channelId"
+                component={MessageIndexContainer}
+              />
+              <Route
+                path="/workspace/:workspaceId/channel/:channelId"
+                component={MessageFormContainer}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </CurrentUserContextProvider>
+  </Router>
 );
 export default App;
