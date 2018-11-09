@@ -93,7 +93,7 @@ const App = () => (
           <Route path="/workspace" component={WorkspaceIndexContainer} />
         </div>
         <div className={styles.workspaceLeft}>
-          <div className={styles.workspaceLeftHeader}>
+          <div className={styles.workspaceLeftHeaderContainer}>
             <Route
               path="/workspace/:workspaceId"
               component={UserInfoContainer}

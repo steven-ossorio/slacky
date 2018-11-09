@@ -3,7 +3,7 @@ import { Query } from "react-apollo";
 import UserWorkspacesQuery from "../../queries/CurrentUserWorkspaces";
 import WorkspaceIndex from "./WorkspaceIndex";
 
-const WorkspacesQuery = props => {
+const WorkspacesQuery = () => {
   return (
     <Query query={UserWorkspacesQuery}>
       {({ loading, error, data }) => {
