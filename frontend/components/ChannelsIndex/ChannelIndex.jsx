@@ -12,7 +12,6 @@ class ChannelIndex extends Component {
   }
 
   render() {
-    console.log(this.props);
     let { workspaceId } = this.props;
     let channelList = this.props.channels.map(({ id, name }) => {
       return (
