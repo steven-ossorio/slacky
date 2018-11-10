@@ -1,14 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBarStyles.scss";
-import DropDown from "../DropDown/DropDown";
+import NavBarDropDownContainer from "../NavDropDown/NavBarDropDownContainer";
 
 const NavBar = props => {
-  let workspaces = props.currentUser ? (
-    <DropDown workspaces={props.currentUser.workspaces} />
-  ) : (
-    ""
-  );
+  console.log(props);
+  let workspaces = props.currentUserId ? <NavBarDropDownContainer /> : "";
 
   return (
     <div className={styles.navBarContainer}>

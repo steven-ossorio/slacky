@@ -71,6 +71,58 @@
   // }
 }
 
+.menuContainer {
+  border-right: 0.25rem solid transparent;
+  max-height: calc(100vh - 99px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.dropdownContainer {
+  // width: 300px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.dropdownHeaderContainer {
+  margin: 16px 24px 8px;
+  height: 40px;
+  font-weight: 900;
+  color: #2c2d30;
+}
+
+.dropdownUserName {
+  line-height: 2.25;
+  font-size: 1.125rem;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dropdownDivider {
+  width: 80%;
+  color: #a8a9b0;
+}
+
+.dropdownLogoutButton {
+  margin-bottom: 30px;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  color: #6d6f7b;
+  border-color: #6d6f7b;
+  background-color: white;
+
+  &:hover {
+    height: 100%;
+    background-color: #0576b9;
+    color: white;
+  }
+}
+
 // .userInfoDropDown {
 //   color: white;
 //   cursor: pointer;

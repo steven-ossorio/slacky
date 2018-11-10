@@ -14,7 +14,19 @@ class MessageForm extends Component {
     };
   };
 
-  handleSubmit = () => {};
+  handleSubmit = e => {
+    e.preventDefault();
+    const { channelId } = this.props;
+
+    this.props
+      .createMessage({
+        channelId,
+        text: this.state.text
+      })
+      .then(() => {
+        this.setState({ text: "" });
+      });
+  };
 
   render() {
     return (

@@ -12,7 +12,17 @@ const ChannelIndexContainer = props => {
           return <div>Loading...</div>;
         }
         if (data.userChannels) {
-          return <ChannelIndex channels={data.userChannels} workspaceId={id} />;
+          let generalId = data.userChannels.filter(
+            channel => channel.name === "General"
+          )[0].id;
+          return (
+            <ChannelIndex
+              channels={data.userChannels}
+              channelId={generalId}
+              workspaceId={id}
+              history={props.history}
+            />
+          );
         } else {
           return "";
         }

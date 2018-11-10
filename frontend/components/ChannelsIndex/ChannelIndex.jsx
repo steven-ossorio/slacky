@@ -4,7 +4,15 @@ import styles from "./ChannelIndex.scss";
 import UserInfoContainer from "../UserInfo/UserInfoContainer";
 
 class ChannelIndex extends Component {
+  componentDidMount() {
+    if (this.props.channelId) {
+      const { workspaceId, channelId } = this.props;
+      this.props.history.push(`/workspace/${workspaceId}/channel/${channelId}`);
+    }
+  }
+
   render() {
+    console.log(this.props);
     let { workspaceId } = this.props;
     let channelList = this.props.channels.map(({ id, name }) => {
       return (

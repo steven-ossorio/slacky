@@ -23,8 +23,6 @@ const MessageIndex = ({ messages }) => {
       );
     }
 
-    console.log(formatedDay);
-
     return (
       <div key={id}>
         {formatedDay}

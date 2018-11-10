@@ -5,15 +5,17 @@ import MessageForm from "./MessageForm";
 import { withRouter } from "react-router-dom";
 
 const MessageFormContainer = props => {
-  let id = props.match.params.channelId;
+  let channelId = props.match.params.channelId;
 
   return (
     <Mutation mutation={CreateMessageMutation}>
       {mutate => {
-        const createMessage = ({ text, id }) => {
-          return mutate({ variables: { text, id } });
+        const createMessage = ({ text, channelId }) => {
+          return mutate({ variables: { text, channelId } });
         };
-        return <MessageForm createMessage={createMessage} />;
+        return (
+          <MessageForm createMessage={createMessage} channelId={channelId} />
+        );
       }}
     </Mutation>
   );

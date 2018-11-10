@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import buttonStyle from "../LogoutButton/LogoutButtonStyles.scss";
 import LogoutButtonContainer from "../LogoutButton/LogoutButtonContainer";
 import WorkspaceList from "../Workspace/WorkspaceList";
-import styles from "./DropDown.scss";
+import styles from "./NavDropDown.scss";
 
-class DropDown extends Component {
+class NavDropDown extends Component {
   state = {
     menuActive: false,
     editClick: false
@@ -18,6 +18,7 @@ class DropDown extends Component {
   };
 
   render() {
+    console.log(this.props);
     let menu;
     if (this.state.menuActive) {
       menu = (
@@ -54,4 +55,4 @@ class DropDown extends Component {
   }
 }
 
-export default DropDown;
+export default NavDropDown;

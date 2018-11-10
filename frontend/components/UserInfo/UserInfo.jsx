@@ -14,14 +14,25 @@ class UserInfo extends Component {
     });
   };
 
+  logout = () => {
+    this.props.logoutUser();
+  };
+
   render() {
-    const { currentUserName, logoutUser, workspace } = this.props;
+    const { currentUserName, workspace } = this.props;
 
     let menu;
     if (this.state.menuActive) {
       menu = (
         <div className={styles.dropdownContainer}>
-          <div>Hello</div>
+          <div className={styles.dropdownHeaderContainer}>
+            <div className={styles.dropdownUserName}>{currentUserName}</div>
+          </div>
+          <hr className={styles.dropdownDivider} />
+          <div className={styles.dropdownLogoutButton} onClick={this.logout}>
+            Logout
+          </div>
+          <div onClick={this.logOut} />
         </div>
       );
     } else {
@@ -42,24 +53,10 @@ class UserInfo extends Component {
           </div>
           <div>{currentUserName}</div>
         </div>
-        <div>{menu}</div>
+        <div className={styles.menuContainer}>{menu}</div>
       </div>
     );
   }
 }
-
-// const UserInfo = ({ currentUserName }) => {
-//   return (
-//     <>
-//       <div className={styles.workspaceLeftHeaderTitle} />
-//       <div className={styles.workspaceLeftHeaderUsernameContainer}>
-//         <div className={styles.workspaceLeftHeaderUsername}>
-//           <i class="fas fa-circle"></i>
-//           {currentUserName}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
 
 export default UserInfo;
