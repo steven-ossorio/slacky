@@ -1,0 +1,89 @@
+// .channelListContainer {
+//   background-color: #4f3448;
+//   min-width: 220px;
+//   font-size: 15px;
+//   font-weight: 300;
+//   height: 100%;
+//   position: relative;
+// }
+
+.channelListHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  // position: relative;
+  // margin-top: 20px;
+}
+
+.channelListHeader {
+  width: 100%;
+  padding-left: 15px;
+  cursor: pointer;
+  // width: 190px;
+  // padding: 2px 0px 2px 15px;
+  // margin-bottom: 3px;
+  // color: white;
+}
+
+.channelListHeaderPLus {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-right: 15px;
+  // color: #aaa;
+  // padding: 2px 4px;
+  // border-radius: 20%;
+  // position: absolute;
+  // left: 180px;
+}
+
+.channelListLiContainer {
+  list-style: none;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.channelListLi {
+  width: 100%;
+  display: block;
+  padding: 5px 0;
+  padding-left: 15px;
+  height: 100%;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  // max-height: 1.08em;
+  line-height: 1.08em;
+  // position: relative;
+  white-space: nowrap;
+  // color: white;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.channelListLiContainer {
+  // padding: 7px 15px 6px 15px;
+  // max-width: 200px;
+  // text-overflow: ellipsis;
+  // overflow: hidden;
+  // white-space: nowrap;
+
+  a {
+    &:visited,
+    &:hover,
+    &:active {
+      color: #cac4c7;
+    }
+    text-decoration: none;
+  }
+}
+
+.channeListLiContent {
+  span {
+    color: #ab9ba9;
+    font-size: 16px;
+    padding-right: 4px;
+    margin: auto 0;
+  }
+}

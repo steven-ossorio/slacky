@@ -1,0 +1,148 @@
+.messageList {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+
+  ul {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+}
+
+.messageListDivider {
+  display: flex;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 700;
+  padding: 10px 0;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  span {
+    width: 20%;
+  }
+}
+
+.messageListDividerLine {
+  color: black;
+  width: 90%;
+}
+
+.messageListItem {
+  display: flex;
+  color: #2c2d30;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  min-width: 97.5%;
+  height: 100%;
+  padding-left: 25px;
+  margin-top: 2px;
+}
+
+.messageContentHeader {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  width: 100%;
+  height: 100%;
+}
+
+.messageContentHeaderUser {
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.messageContentBody {
+  padding-top: 5px;
+  font-size: 16px;
+  width: 93%;
+  font-weight: 400;
+  height: 100%;
+  word-wrap: break-word;
+  line-height: 19px;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  background-color: white;
+  height: 100%;
+  width: calc(100% - 300px);
+}
+
+.chatBody {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: calc(100% - 60px);
+  width: 100%;
+}
+
+.messageContainer {
+  height: 100%;
+  min-width: 250px;
+  width: 100%;
+}
+
+.messageIndexOverflowWrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 65px);
+  width: calc(100% - 2px);
+  display: flex;
+  flex-direction: column;
+}
+
+.messageIndex {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.messageIndexItem {
+  display: flex;
+  color: #333;
+  padding-left: 25px;
+  height: 100%;
+  min-width: 97%;
+  margin-top: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.messageIndexItemContent {
+  line-height: 22px;
+  margin: 2px 0;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  max-width: calc(100% - 100px);
+}
+
+.messageIndexItemHeader {
+  display: flex;
+  align-items: baseline;
+}
+
+.messageIndexItemName {
+  font-weight: 700;
+}
+
+.messageIndexItemBody {
+  font-weight: 400;
+  font-size: 15px;
+}

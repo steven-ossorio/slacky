@@ -1,10 +1,10 @@
 import gql from "graphql-tag";
 
 export default gql`
-  query {
-    current_user {
+  query($id: ID!) {
+    userChannels(workspace_id: $id) {
       id
-      username
+      name
     }
   }
 `;

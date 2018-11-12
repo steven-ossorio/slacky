@@ -1,0 +1,151 @@
+.workspaceLeftHeader {
+  margin: 0 auto;
+  width: 90%;
+  color: #ab9ba9;
+  position: relative;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.workspaceLeftHeaderTitleContainer {
+  margin-bottom: -2px;
+  margin-top: 0.5625rem;
+  line-height: 1.075rem;
+  display: flex;
+}
+
+.workspaceLeftHeaderTitle {
+  color: white !important;
+  font-size: 1.125rem;
+  line-height: 1.375;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.workspaceLeftHeaderV {
+  // color: #a09a9f;
+  margin-top: 3px;
+  outline: 0;
+  order: 1;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  padding: 3px;
+}
+
+.workspaceLeftHeaderUsernameContainer {
+  // font-weight: 300px;
+  // margin-left: 30px;
+  // margin-top: 4px;
+
+  // color: #ab9ba9;
+  display: flex;
+  position: relative;
+  margin-top: 2px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  z-index: 1;
+}
+
+.userStatus {
+  margin-right: 5px;
+  i {
+    color: green;
+  }
+}
+
+.workspaceLeftHeaderUsername {
+  // color: #a09a9f;
+  margin-left: 4px;
+  font-size: 0.87rem;
+  font-weight: 500;
+
+  // &:hover {
+  //   color: white;
+  // }
+}
+
+.menuContainer {
+  border-right: 0.25rem solid transparent;
+  max-height: calc(100vh - 99px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.dropdownContainer {
+  // width: 300px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.dropdownHeaderContainer {
+  margin: 16px 24px 8px;
+  height: 40px;
+  font-weight: 900;
+  color: #2c2d30;
+}
+
+.dropdownUserName {
+  line-height: 2.25;
+  font-size: 1.125rem;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dropdownDivider {
+  width: 80%;
+  color: #a8a9b0;
+}
+
+.dropdownLogoutButton {
+  margin-bottom: 30px;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  color: #6d6f7b;
+  border-color: #6d6f7b;
+  background-color: white;
+
+  &:hover {
+    height: 100%;
+    background-color: #0576b9;
+    color: white;
+  }
+}
+
+// .userInfoDropDown {
+//   color: white;
+//   cursor: pointer;
+//   height: 60px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   padding-left: 15px;
+//   padding-top: 10px;
+// }
+
+// .userInfoDropDown:hover {
+//   background-color: #301c2b;
+// }
+
+// .userInfoTitle {
+//   font-weight: 500;
+//   font-size: 17px;
+//   padding-bottom: 5px;
+// }
+
+// .userInfoUsername {
+//   display: flex;
+//   font-weight: 300;
+//   font-size: 13px;
+// }
